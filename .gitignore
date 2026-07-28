@@ -2,6 +2,9 @@
 
 !.gitignore
 !README.md
+!README.zh-CN.md
+!README.en.md
+!README.ko.md
 !CUSTOM-MP9G4-MONTEREY.md
 
 !all_efi/

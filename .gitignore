@@ -1,11 +1,13 @@
 *
 
 !.gitignore
+!.gitattributes
 !README.md
 !README.zh-CN.md
 !README.en.md
 !README.ko.md
 !CUSTOM-MP9G4-MONTEREY.md
+!build-sequoia-public.py
 
 !all_efi/
 all_efi/*

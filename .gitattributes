@@ -1,0 +1,3 @@
+# Preserve EFI binaries, signed kext bundles, and plist bytes on every platform.
+all_efi/custom/final/hp-prodesk-600-g4-mini-sequoia-15.8.1/EFI/** -text -diff
+dist/custom/final/*.zip -text

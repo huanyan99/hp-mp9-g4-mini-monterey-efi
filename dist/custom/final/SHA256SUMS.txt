@@ -1,2 +1,3 @@
 87a59490a680a3d64b1742040111847795cd06b3cbe7184964349120495887c0  hp-mp9-g4-mini-monterey-12.6.5-igpu-final.zip
 e23cf347049297e419d0c8fb93ea10f6557932293c175c07d27ef91694883c43  hp-mp9-g4-mini-monterey-12.6.5-safe-rescue.zip
+5bfcd96e67ec712be938845e0a9ec56f42cf06b6c23826b0b72234dfbb66d38a  hp-prodesk-600-g4-mini-sequoia-15.8.1-public.zip

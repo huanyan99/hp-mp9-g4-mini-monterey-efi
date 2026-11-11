@@ -1,4 +1,14 @@
-# HP MP9 G4 Mini macOS Monterey 12.6.5 EFI
+# HP ProDesk 600 G4 Mini OpenCore EFI
+
+## macOS Sequoia 15.8.1 public backup
+
+`dist/custom/final/hp-prodesk-600-g4-mini-sequoia-15.8.1-public.zip` is a minimal, sanitized copy of the working USB EFI for this HP ProDesk 600 G4 Mini (i5-8400T, UHD 630, BCM94360CS2, Realtek Ethernet, 256GB SATA SSD). It retains the active ACPI, drivers, kexts, OpenCanopy resources, and original boot binaries. The USB source was not modified. The internal EFI copy passed file checks, but an independent boot without the USB has not yet been confirmed.
+
+`AirportBrcmFixup.kext` and `AirPortBrcmNIC_Injector.kext` are both **disabled** in the working configuration. Do not re-enable them based on older guides. The tested macOS installation also has the OCLP 2.5.1 Modern Wireless root patch; this ZIP does **not** contain that system-volume patch, so the EFI alone does not guarantee Wi-Fi on a fresh Sequoia installation.
+
+The public `PlatformInfo -> Generic` serial number, MLB, UUID, and ROM are placeholders. Back up the destination EFI and restore your own values from a private working configuration before personal use; never publish those values. Copy the `EFI` folder to the EFI partition root while preserving any existing `EFI/APPLE` directory. Keep the USB for the first boot as a fallback; do not Reset NVRAM without a specific reason. The exact provenance of the USB's OpenCore binary is unverified. `ocvalidate` 1.0.8 reported no issues with the working configuration; the public version changes only the identity fields.
+
+See `dist/custom/final/SHA256SUMS.txt` for the archive checksum. The root-level `build-sequoia-public.py` can rebuild the sanitized package from the fingerprint-matched working USB. The Monterey 12.6.5 notes below are retained for the older packages.
 
 This is the final OpenCore EFI package for a personal HP MP9 G4 Mini build, adjusted from the HP ProDesk 600 G4 DM / HP MP9 G4 Mini platform EFI.
 

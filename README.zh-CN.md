@@ -1,4 +1,14 @@
-# HP MP9 G4 Mini macOS Monterey 12.6.5 EFI
+# HP ProDesk 600 G4 Mini OpenCore EFI
+
+## macOS Sequoia 15.8.1 公开备份
+
+`dist/custom/final/hp-prodesk-600-g4-mini-sequoia-15.8.1-public.zip` 是从当前可用的 U 盘 EFI 精简而来，适用于本机 HP ProDesk 600 G4 Mini、i5-8400T、UHD 630、BCM94360CS2、Realtek 有线网卡及 256GB SATA SSD。保留了正在使用的 ACPI、驱动、Kext、OpenCanopy 资源和原始启动二进制。U 盘原件未改动；内置盘 EFI 已完成文件校验，但尚未收到拔掉 U 盘独立启动的确认。
+
+本版 `AirportBrcmFixup.kext` 和 `AirPortBrcmNIC_Injector.kext` 均为**禁用**，这是当前 Wi-Fi 正常工作的状态，请勿照旧教程重新启用。测试系统还安装了 OCLP 2.5.1 Modern Wireless 根补丁；此 zip **不包含**系统卷补丁，单靠 EFI 不保证全新安装的 Sequoia Wi-Fi 可用。
+
+公开包已将 `PlatformInfo -> Generic` 中的序列号、MLB、UUID、ROM 改为占位值。个人恢复时请先备份目标 EFI，再从自己保存的私有工作配置恢复这些字段；不要把真实值提交到 GitHub。复制 `EFI` 文件夹到 EFI 分区根目录时，保留原有 `EFI/APPLE`。首次启动保留 U 盘作为回退，不要无故 Reset NVRAM。此包使用 U 盘原有 OpenCore 二进制，其具体构建来源尚未独立确认；`ocvalidate` 1.0.8 对工作配置检查为零错误，公开版仅更改了身份字段。
+
+校验值见 `dist/custom/final/SHA256SUMS.txt`。可用仓库根目录的 `build-sequoia-public.py` 从指纹匹配的工作 U 盘重新生成去标识版本。下面是保留的 Monterey 12.6.5 旧版说明。
 
 这是给个人设备整理的最终 OpenCore EFI，基于 HP ProDesk 600 G4 DM / HP MP9 G4 Mini 同平台 EFI 调整而来。
 

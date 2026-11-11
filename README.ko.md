@@ -1,4 +1,14 @@
-# HP MP9 G4 Mini macOS Monterey 12.6.5 EFI
+# HP ProDesk 600 G4 Mini OpenCore EFI
+
+## macOS Sequoia 15.8.1 공개 백업
+
+`dist/custom/final/hp-prodesk-600-g4-mini-sequoia-15.8.1-public.zip`은 현재 정상 작동하는 USB EFI에서 필요한 파일만 추려 기기 식별 정보를 제거한 패키지입니다. 대상 장비는 HP ProDesk 600 G4 Mini(i5-8400T, UHD 630, BCM94360CS2, Realtek 유선 LAN, 256GB SATA SSD)입니다. 사용 중인 ACPI, 드라이버, Kext, OpenCanopy 리소스 및 원본 부팅 바이너리를 유지했습니다. USB 원본은 변경하지 않았습니다. 내장 디스크 EFI의 파일 검증은 통과했지만 USB를 제거한 독립 부팅은 아직 확인되지 않았습니다.
+
+현재 정상 작동 구성에서 `AirportBrcmFixup.kext`와 `AirPortBrcmNIC_Injector.kext`는 모두 **비활성화**되어 있습니다. 이전 안내를 보고 다시 활성화하지 마세요. 테스트한 macOS에는 OCLP 2.5.1 Modern Wireless 루트 패치도 적용되어 있습니다. 이 ZIP에는 시스템 볼륨 패치가 포함되지 않으므로 새 Sequoia 설치에서 EFI만으로 Wi-Fi가 보장되지는 않습니다.
+
+공개본의 `PlatformInfo -> Generic` 일련번호, MLB, UUID, ROM은 자리 표시자로 변경했습니다. 개인 복구 시 대상 EFI를 먼저 백업하고 비공개 작업 구성에서 본인의 값을 복원하세요. 실제 식별 값은 GitHub에 올리지 마세요. EFI 파티션 루트에 `EFI` 폴더를 복사하되 기존 `EFI/APPLE`은 보존하세요. 첫 부팅에는 USB를 복구 수단으로 남겨 두고, 특별한 이유 없이 Reset NVRAM을 하지 마세요. USB의 OpenCore 바이너리 출처와 정확한 빌드는 독립적으로 확인되지 않았습니다. 작업 구성은 `ocvalidate` 1.0.8에서 오류가 없었고 공개본은 식별 필드만 변경했습니다.
+
+압축 파일 체크섬은 `dist/custom/final/SHA256SUMS.txt`를 참조하세요. 루트의 `build-sequoia-public.py`로 지문이 일치하는 USB에서 공개본을 다시 만들 수 있습니다. 아래 Monterey 12.6.5 안내는 기존 패키지를 위해 유지합니다.
 
 이 저장소는 HP ProDesk 600 G4 DM / HP MP9 G4 Mini 계열 EFI를 기반으로 조정한 HP MP9 G4 Mini용 최종 OpenCore EFI 패키지입니다.
 
